@@ -8,7 +8,7 @@ function addUp(number) {
 
 console.log(addUp(4))
 
-\
+
 
 function minMax(arrey1) {
     let newarray = [];
