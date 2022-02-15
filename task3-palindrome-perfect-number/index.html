@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="number1">
+    <input type="number" name="" id="number2">
+    <br>
+    <button id="palindrome">List Palindrome</button>
+    <button id="perfect">List Perfect Number</button>
+    <br>
+    <textarea name="" id="palindrome-text" cols="1" rows="100"></textarea>
+    <textarea name="" id="perfect-text" cols="1" rows="100" style="margin-left: 5rem;"></textarea>
+    <script src="./app.js"></script>
+</body>
+</html>
+
+let number1 = document.getElementById("number1");
+let number2 = document.getElementById("number2");
+let btnPalindrome = document.getElementById("palindrome");
+let btnPerfect = document.getElementById("perfect");
+let Palindrometext = document.getElementById("palindrome-text");
+let Perfecttext = document.getElementById("perfect-text");
+btnPalindrome.addEventListener("click" , pal);
+function pal(){
+    let newArr = [];
+    for (let i = Number(number1.value); i < Number(number2.value); i++){
+        newArr.push(String(i))
+    }
+    for (let i = 0; i < newArr.length; i++){
+       if (newArr[i] == newArr[i].split("").reverse().join("")){
+           Palindrometext.innerHTML += newArr[i]
+       }
+    }
